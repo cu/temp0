@@ -51,6 +51,7 @@ SYNCMSG_IN_DIN = 'DIN Sync In'
 #
 # Note and pattern related constants
 #
+TRANSPOSE_DOUBLE_UP = 2
 TRANSPOSE_UP = 1
 TRANSPOSE_DOWN = -1
 TRANSPOSE_NONE = 0

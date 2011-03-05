@@ -295,8 +295,8 @@ class Model:
                             
     def eraseAllPatterns(self):
         try:
-            for bank in range(1, NUMBER_OF_BANKS):
-                for loc in range(1, LOCATIONS_PER_BANK):
+            for bank in range(1, NUMBER_OF_BANKS + 1):
+                for loc in range(1, LOCATIONS_PER_BANK + 1):
                     self.commlock = True
                     self.dataLink.sendWritePatternMessage(Pattern(), bank - 1, loc - 1)
             self.controller.updateStatusText('EEPROM successfully erased.')

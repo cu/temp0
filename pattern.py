@@ -6,6 +6,7 @@ ACCENT_MASK = 0x40
 
 C2 = 0x17
 C3 = 0x23
+C4 = 0x2F
 
 REST_NOTE = 0x00
 NULL_NOTE = 0xFF
@@ -77,6 +78,8 @@ class Pattern:
                 efxstr += 'A '
             if self.notes[i].slide:
                 efxstr += 'S '
+            if self.notes[i].transpose == TRANSPOSE_DOUBLE_UP:
+                efxstr += 'UU'
             if self.notes[i].transpose == TRANSPOSE_UP:
                 efxstr += 'U '
             if self.notes[i].transpose == TRANSPOSE_DOWN:
@@ -113,7 +116,10 @@ class Note:
 
         # Otherwise, this isn't a rest note:
         
-        if (rawNote > C3):
+        if (rawNote > C4):
+            self.transpose = TRANSPOSE_DOUBLE_UP
+            rawNote = rawNote - 24
+        elif (rawNote > C3):
             self.transpose = TRANSPOSE_UP
             rawNote = rawNote - 12
         elif (rawNote < C2):
@@ -136,7 +142,10 @@ class Note:
 
     def toByte(self):        
 
-        if self.transpose == TRANSPOSE_UP:
+        if self.transpose == TRANSPOSE_DOUBLE_UP:
+            rawnote = self.note + 24
+
+        elif self.transpose == TRANSPOSE_UP:
             rawnote = self.note + 12
 
         elif self.transpose == TRANSPOSE_DOWN:

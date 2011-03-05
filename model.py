@@ -380,8 +380,8 @@ class WorkerThread(Thread):
                 if (v != 0):
                     #print '!'+str(v)
                     self._model.processPushedPacket()
-            else:
-                time.sleep(.3)
+                else:
+                    time.sleep(.1)
                 
             if self._want_abort:
                 #wxPostEvent(self._notify_window,ResultEvent(None))

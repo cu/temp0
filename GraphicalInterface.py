@@ -725,7 +725,7 @@ class MainWindow(wx.Frame):
                         
             
         elif event.GetId() == ID_X0XB0X_UPLOAD_FIRMWARE:
-            d = wx.FileDialog(self, 'Choose a x0xb0x firmware file', style = OPEN, wildcard = "HEX files (*.hex)|*.hex|All files (*.*)|*.*")
+            d = wx.FileDialog(self, 'Choose a x0xb0x firmware file', style = wx.FD_OPEN, wildcard = "HEX files (*.hex)|*.hex|All files (*.*)|*.*")
             d.ShowModal()
             if len(d.GetPath()) != 0:
                 try:

@@ -300,7 +300,7 @@ class MainWindow(wx.Frame):
         #divider2 = wx.StaticLine(self, -1,
         #                        pos = (15, self.pe_SaveButton.GetPosition()[1] +
         #                               self.pe_SaveButton.GetSize()[1] + 15),
-        #                        size = (569,1), style = LI_HORIZONTAL)
+        #                        size = (569,1), style = wx.LI_HORIZONTAL)
         #label2 = wx.StaticText(self, -1, "Pattern Play",
         #                      (divider2.GetPosition()[0]+5,
         #                       divider2.GetPosition()[1]+5))
@@ -328,13 +328,13 @@ class MainWindow(wx.Frame):
         #self.Bind(wx.EVT_BUTTON, self.HandleButtonAction, pp_button1)
         #self.Bind(wx.EVT_BUTTON, self.HandleButtonAction, pp_button2)
         
-        #pp_label1 = StaticText(self, -1, "Bank:", (436, 415), style = ALIGN_RIGHT)
+        #pp_label1 = wx.StaticText(self, -1, "Bank:", (436, 415), style = ALIGN_RIGHT)
         #pp_label1.SetFont(labelfont)
         #pp_label1.SetSize(pp_label1.GetBestSize())
 
         #textValidator = TextValidator(map(str, range(1, NUMBER_OF_BANKS + 1))) 
         #self.pp_bankSelect = wx.TextCtrl(self, -1, "1", (476,412), (39,19),
-        #                                style = (TE_PROCESS_ENTER),
+        #                                style = (wx.TE_PROCESS_ENTER),
         #                                validator = textValidator)
 
         divider3 = wx.StaticLine(self, -1, pos = (15,self.pe_SaveButton.GetPosition()[1]+50), size = (569,1),
@@ -370,7 +370,7 @@ class MainWindow(wx.Frame):
         self.Bind(wx.EVT_SLIDER, self.HandleSlider, self.tempoSlider)
         
 
-        #syncText = wx.StaticText(self, -1, "Select sync mode:", (350, 486), style = ALIGN_LEFT)
+        #syncText = wx.StaticText(self, -1, "Select sync mode:", (350, 486), style = wx.ALIGN_LEFT)
         #syncText.SetFont(labelfont)
         #syncText.SetSize(syncText.GetBestSize())
         
@@ -395,7 +395,7 @@ class MainWindow(wx.Frame):
         # if the window is resized.
         #
         self.sizer = wx.BoxSizer(wx.VERTICAL)
-#        self.sizer.Add(self.splitter, 1, EXPAND)
+#        self.sizer.Add(self.splitter, 1, wx.EXPAND)
         self.SetSizer(self.sizer)
         self.SetAutoLayout(1)
 
@@ -490,7 +490,7 @@ class MainWindow(wx.Frame):
     def AboutBox(self):
         aboutString = ('(c) 2005 Michael Broxton & Limor Fried.\n\n' +
                        'For more information about the x0xb0x, check out http://www.ladyada.net/make/x0xb0x\n')
-        dlg = wx.MessageDialog(self, aboutString, 'x0xb0x c0ntr0l', OK | ICON_INFORMATION) 
+        dlg = wx.MessageDialog(self, aboutString, 'x0xb0x c0ntr0l', wx.OK | wx.ICON_INFORMATION) 
         dlg.ShowModal() 
         dlg.Destroy()
 
@@ -670,7 +670,7 @@ class MainWindow(wx.Frame):
             self.AboutBox()
 
         elif event.GetId() == ID_FILE_EXIT:
-            self.Close(true)
+            self.Close(True)
 
         # Edit menu
         elif event.GetId() == ID_EDIT_COPY:
@@ -766,7 +766,7 @@ class MainWindow(wx.Frame):
                                   caption = "WARNING",
                                   style = (wx.ICON_EXCLAMATION | wx.YES_NO | wx.NO_DEFAULT))
             
-            if dlg.ShowModal() == ID_YES:
+            if dlg.ShowModal() == wx.ID_YES:
                 self.controller.eraseAllPatterns()
             else:
                 pass

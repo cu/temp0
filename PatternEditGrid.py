@@ -43,7 +43,7 @@ class PatternEditGrid(gridlib.Grid):
                                                   (position[0] + 12 + (i)*507/16, position[1] - 19)))
 
         wx.StaticText(parent, -1, "Notes:", (position[0] - 46, position[1] + 8))
-#       wx.StaticText(parent, -1, "Lengths:", (position[0] - 59, position[1] + 34))
+#        wx.StaticText(parent, -1, "Lengths:", (position[0] - 59, position[1] + 34))
         wx.StaticText(parent, -1, "Effects:", (position[0] - 50, position[1] + 60))
 
         #
@@ -103,14 +103,14 @@ class PatternEditGrid(gridlib.Grid):
         # the bottom row, and vice versa.  The middle row wraps
         # to itself.
         #
-        if (evt.KeyCode == WXK_RETURN or
-            evt.KeyCode == WXK_SPACE or
-            evt.KeyCode == WXK_TAB):
+        if (evt.KeyCode == wx.WXK_RETURN or
+            evt.KeyCode == wx.WXK_SPACE or
+            evt.KeyCode == wx.WXK_TAB):
             
             self.MoveRightWithSpecialWrap()
             handled = True
             
-        elif evt.KeyCode == WXK_BACK:
+        elif evt.KeyCode == wx.WXK_BACK:
             self.MoveLeftWithSpecialWrap()
             handled = True
 
@@ -119,11 +119,11 @@ class PatternEditGrid(gridlib.Grid):
         # can wrap around the grid when you push up against either
         # side.
         #
-        elif evt.KeyCode == WXK_RIGHT:
+        elif evt.KeyCode == wx.WXK_RIGHT:
             self.MoveRightWithWrap()
             handled = True
 
-        elif evt.KeyCode == WXK_LEFT:
+        elif evt.KeyCode == wx.WXK_LEFT:
             self.MoveLeftWithWrap()
             handled = True
 

@@ -1,0 +1,58 @@
+
+This is the current list of things that need to be done with the
+c0ntr0l application.  You'll have my undying love and gratitude if you
+knock a few items off of this list. 
+
+
+Shaving a yak:
+--------------
+- Add a pattern browser for manipulating the patterns in memory via the GUI.
+
+
+A solid day of work:
+--------------------
+- Test on Linux
+- Test on Windows
+
+
+Afternoon in a coffee shop
+--------------------------
+- Setup the py2exe build system
+
+
+Low hanging fruit:
+------------------
+- Make the background of the icon transparent (or make a new one entirely)
+
+
+
+Programming Tasks and BUGS
+--------------------------
+
+In addition to the high level todo items above, there are several tasks that 
+need to be complete before the software is released at all.  This includes both
+bugs and incomplete features.
+
+
+- Fix and test the pattern length control.  Change the behavior so
+  that it doesn't blow away the pattern if you shorten, then lengthen it
+  again.
+
+- Implement other commapi controls. (Set tempo, sync, start/stop, etc)
+
+- Implement the pattern play control area.
+
+- Think about pattern librarian style features that could be added.  
+
+- Implement the proper tab behavior in the GUI.
+
+- See if the textvalidators can be more flexible in letting you
+  overwrite existing data.  Make this work in conjunction with tabbing
+  around the window and highlighting text.
+
+- After a pattern is loaded, keyboard focus should be on the pattern
+  edit grid (and maybe this should always be true...)
+
+- Clean everything up!
+
+

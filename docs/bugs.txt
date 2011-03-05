@@ -1,0 +1,13 @@
+- CPU usage 100% when connected to x0xb0x
+
+- Tempo text field goes blank when changing tempo on the x0xb0x
+
+- Slides and octaves up x2 steps are not copied with the copy/paste function
+(unverified)
+
+- http://forums.ladyada.net/viewtopic.php?f=7&t=6822
+
+- some people are getting 'x0xb0x not found' although uploading a new firmware
+seems to work fine
+
+

@@ -744,7 +744,7 @@ class MainWindow(wx.Frame):
             #
             # Dump eeprom
             #
-            d = wx.FileDialog(self, 'Save EEPROM image to...', style = SAVE, wildcard = "x0xb0x pattern files (*.xbp)|*.xbp|All files (*.*)|*.*")
+            d = wx.FileDialog(self, 'Save EEPROM image to...', style = wx.SAVE, wildcard = "x0xb0x pattern files (*.xbp)|*.xbp|All files (*.*)|*.*")
             d.ShowModal()
             if len(d.GetPath()) != 0:
                 self.controller.backupAllPatterns(d.GetPath())
@@ -753,7 +753,7 @@ class MainWindow(wx.Frame):
             #
             # Restore EEPROM
             #
-            d = wx.FileDialog(self, 'Choose a x0xb0x EEPROM image file', style = OPEN, wildcard = "x0xb0x pattern files (*.xbp)|*.xbp|All files (*.*)|*.*")
+            d = wx.FileDialog(self, 'Choose a x0xb0x EEPROM image file', style = wx.OPEN, wildcard = "x0xb0x pattern files (*.xbp)|*.xbp|All files (*.*)|*.*")
             d.ShowModal()
             if len(d.GetPath()) != 0:
                 self.controller.restoreAllPatterns(d.GetPath())

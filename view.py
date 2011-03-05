@@ -32,7 +32,7 @@ class View:
     #
     def updateSerialStatus(self, state):
         try:
-            if state == TRUE:
+            if state == True:
                 self.mainWindow.statusBar.SetStatusText("Serial Port: Connected", 1)
             else:
                 self.mainWindow.statusBar.SetStatusText("Serial Port: Disconnected", 1)

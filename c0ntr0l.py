@@ -34,7 +34,7 @@
 #----------------------------------------------------------------------------
 
 ## import all of the wxPython GUI package
-from wxPython.wx import *
+import wx
 
 from Globals import *
 import model
@@ -62,7 +62,7 @@ import view
 # in the back end (actions), and 2) Methods that are called by the software back end
 # to update the state of the GUI (outlets).
 #---------------------------------------------------------------------------
-class x0xc0ntr0l_App(wxApp):
+class x0xc0ntr0l_App(wx.App):
 
     #
     # =================== Initialization =========================
@@ -92,7 +92,7 @@ class x0xc0ntr0l_App(wxApp):
         self.v = v
 
         # Return a success flag
-        return true
+        return True
 
     def OnExit(self):
         # Save the configuration to file and exit.

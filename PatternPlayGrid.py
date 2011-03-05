@@ -1,4 +1,4 @@
-from wxPython.wx import *
+import wx
 from Globals import *
 import wx.grid as gridlib
 
@@ -86,9 +86,9 @@ class NoteRenderer(gridlib.PyGridCellRenderer):
         self.noteBitmap = noteBitmap
 
     def Draw(self, grid, attr, dc, rect, row, col, isSelected):
-        dc.SetBackgroundMode(wxSOLID)
-        dc.SetBrush(wxBrush(wxWHITE, wxSOLID))
-        dc.SetPen(wxTRANSPARENT_PEN)
+        dc.SetBackgroundMode(wx.SOLID)
+        dc.SetBrush(wxBrush(wx.WHITE, wx.SOLID))
+        dc.SetPen(wx.TRANSPARENT_PEN)
         dc.DrawRectangleRect(rect)
         if grid.GetCellValue(row,col) != str(0):
             dc.DrawBitmap(self.noteBitmap, rect.x, rect.y, True)
